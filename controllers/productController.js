@@ -155,3 +155,15 @@ export async function newArrivalProducts(req, res) {
     res.status(500).json({ message: "Error fetching new arrivals", error: error.message });
   }
 }
+
+export async function getCategoryProducts(req, res) {
+  try {
+      const products = await Product.find({ isAvailable: true, category: req.params.categoryName });
+      res.json(products);
+  } catch (err) {
+    res.json({
+      message: "Failed to get products",
+      error: err,
+    });
+  }
+}

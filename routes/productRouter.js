@@ -7,6 +7,7 @@ import {
   getProductById,
   searchProducts,
   newArrivalProducts,
+  getCategoryProducts,
 } from "../controllers/productController.js";
 
 const productRouter = express.Router();
@@ -18,5 +19,6 @@ productRouter.put("/:productId", updateProduct);
 productRouter.get("/search/:query", searchProducts);
 productRouter.get("/new-arrivals", newArrivalProducts);
 productRouter.get("/:productId", getProductById); 
+productRouter.get("/category/:categoryName", getCategoryProducts);
 
 export default productRouter;
