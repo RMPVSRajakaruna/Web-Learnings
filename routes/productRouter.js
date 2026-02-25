@@ -19,8 +19,8 @@ productRouter.delete("/:productId", deleteProduct);
 productRouter.put("/:productId", updateProduct);
 productRouter.get("/search/:query", searchProducts);
 productRouter.get("/new-arrivals", newArrivalProducts);
-productRouter.get("/:productId", getProductById); 
 productRouter.get("/category/:categoryName", getCategoryProducts);
-productRouter.get("/brand/:brandName", getBrandProducts);
+productRouter.get("/brand/:brand", getBrandProducts);
+productRouter.get("/:productId", getProductById);
 
 export default productRouter;
