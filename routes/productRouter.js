@@ -8,6 +8,7 @@ import {
   searchProducts,
   newArrivalProducts,
   getCategoryProducts,
+  getBrandProducts,
 } from "../controllers/productController.js";
 
 const productRouter = express.Router();
@@ -20,5 +21,6 @@ productRouter.get("/search/:query", searchProducts);
 productRouter.get("/new-arrivals", newArrivalProducts);
 productRouter.get("/:productId", getProductById); 
 productRouter.get("/category/:categoryName", getCategoryProducts);
+productRouter.get("/brand/:brandName", getBrandProducts);
 
 export default productRouter;

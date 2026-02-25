@@ -167,3 +167,15 @@ export async function getCategoryProducts(req, res) {
     });
   }
 }
+
+export async function getBrandProducts(req, res) {
+  try {
+      const products = await Product.find({ isAvailable: true, brand: req.params.brandName });
+      res.json(products);
+  } catch (err) {
+    res.json({
+      message: "Failed to get products",
+      error: err,
+    });
+  }
+}
