@@ -18,6 +18,7 @@ import mongoose from "mongoose";
 import productRouter from "./routes/productRouter.js";
 import userRouter from "./routes/useroute.js";
 import brandRouter from "./routes/brandRouter.js";
+import paymentRouter from "./routes/paymentRoutes.js";
 import jwt from "jsonwebtoken";
 import orderRouter from "./routes/orderRoute.js";
 import cors from "cors";
@@ -71,6 +72,7 @@ app.use("/api/users", userRouter);
 app.use("/api/admin", userRouter);
 app.use("/api/orders", orderRouter);
 app.use("/api/brands", brandRouter);
+app.use("/api/payment", paymentRouter);
 
 app.listen(5000, () => {
   console.log("Server is running on port 5000");
